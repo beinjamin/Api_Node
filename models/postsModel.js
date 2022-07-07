@@ -20,4 +20,6 @@ const PostsModel = mongose.model (
     },
 
     "posts"
-)
+);
+
+module.exports = { PostsModel};
