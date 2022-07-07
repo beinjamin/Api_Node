@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const PostsModel = mongose.model (
+const PostsModel = mongoose.model (
     "api-node",
     {
         author:{
@@ -13,7 +13,7 @@ const PostsModel = mongose.model (
             required: true
         },
         date : {
-            type: Sate,
+            type: Date,
             default: Date.now
         }
 
