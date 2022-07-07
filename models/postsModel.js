@@ -11,6 +11,10 @@ const PostsModel = mongose.model (
         message: {
             type: String,
             required: true
+        },
+        date : {
+            type: Sate,
+            default: Date.now
         }
 
     },
