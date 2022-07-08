@@ -4,7 +4,7 @@ require('./models/dbconfig');
 const postsRoutes = require('./routes/postsController');
 
 
-app.use('/',postsRoutes);
+app.use('/posts',postsRoutes);
 
 
 app.listen(5500, () => console.log ('Serve started: 5500'));
