@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
+//droit faire en sorte de recuper id de cet object
+const ObjectId = require('mongoose').Types.ObjectId
+
 const { PostsModel } = require  ('../models/postsModel');
 
 router.get('/', (req,res)=> {
@@ -11,8 +14,9 @@ router.get('/', (req,res)=> {
  
     })
 });
-
+//cree
 router.post('/', (req,res)=>{
+    console.log (req.body)
     const newRecord = new PostsModel({
         author: req.body.author,
         message: req.body.message,
@@ -23,6 +27,12 @@ router.post('/', (req,res)=>{
         else console.log("error creating new data: " +err);
     })
 
+});
+//update
+route.put ('/:id', (req , res) => {
+
 })
+
+
 
 module.exports = router;
