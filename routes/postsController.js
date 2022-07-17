@@ -30,13 +30,13 @@ router.post('/', (req,res)=>{
 });
 //update
 router.put ("/:id", (req , res) => {
-    if (ObjectId.isValid (req.params.id))
+    if (!ObjectId.isValid (req.params.id))
     return res.status(400).send("ID inconnu : " + req.params.id)
     const updateRecord={
         author: req.body.author,
-        message: req.body.message,
-    };
-    PostsModel.findByIdAndUpdate(
+        message: req.body.message
+     };
+     PostsModel.findByIdAndUpdate(
         req.params.id,
         {
             $set: updateRecord
@@ -46,7 +46,7 @@ router.put ("/:id", (req , res) => {
         },
         (err, docs)=>{
             if(!err)
-            res.send(docs)
+            res.send(docs);
             else console.log("Update error : " +err);
         }
     )
