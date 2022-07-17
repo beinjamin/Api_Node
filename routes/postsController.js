@@ -17,7 +17,12 @@ router.post('/', (req,res)=>{
         author: req.body.author,
         message: req.body.message,
     });
+    newRecord.save ((err,docs)=>{
+
+        if (!err) res.send (docs);
+        else console.log("error creating new data: " +err);
+    })
 
 })
 
-module.exports = router
+module.exports = router;

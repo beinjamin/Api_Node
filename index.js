@@ -1,9 +1,10 @@
+const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 require('./models/dbconfig');
 const postsRoutes = require('./routes/postsController');
 
-
+app.use(bodyParser.json());
 app.use('/posts',postsRoutes);
 
 
